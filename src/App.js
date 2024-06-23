@@ -1,23 +1,48 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import AddTaskForm from './component/AddTaskForm';
+import TaskList from './component/TaskList';
+
 
 function App() {
+
+  const[task,settask] = useState([])
+
+   const Addtask = (newtask)=>{
+    settask([...task,newtask])
+   }
+
+   const deletetask = (taskId)=>{
+    settask(task.filter(task=>task.id !== taskId))
+
+   } 
+   const toggletaskcompletion = (taskId) =>{
+    settask(task.map(task=>
+      task.id === taskId ?  {...task, completed: !task.completed} : task
+      ))
+
+   }
+
+   const updateTask = (updateTask)=>{
+    settask (task.map(task=>(
+      task.id === updateTask.id ? updateTask : task)
+    ))
+   }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <h1>Main TASK Page</h1>
+      <AddTaskForm onadd = {Addtask}/>
+      <TaskList
+       ondelete = {deletetask}  
+      task = {task}
+      updateTask={updateTask}
+      ontoggle = {toggletaskcompletion}
+
+      />
+    
     </div>
   );
 }

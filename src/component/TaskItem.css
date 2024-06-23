@@ -1,0 +1,35 @@
+.TaskItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  height: 100%; /* Use 100% to allow height to be managed by content */
+  width: 100%; /* Use 100% for full width */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.TaskItem input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.TaskItem span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.TaskItem .MuiButton-root {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px; 
+  min-width: 80px; /* Ensures button has consistent size */
+}
+
+.TaskItem .MuiButton-root:hover {
+  background-color: #cc0000;
+}

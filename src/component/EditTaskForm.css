@@ -1,0 +1,24 @@
+/* EditTaskForm.css */
+
+.dialog-title {
+    font-size: 1.5em !important;
+    font-weight: bold !important;
+}
+
+.dialog-content {
+    padding: 20px !important;
+}
+
+.dialog-actions {
+    display: flex !important;
+    justify-content: flex-end !important;
+    padding: 10px 20px !important;
+}
+
+.dialog-actions button {
+    margin-left: 10px !important;
+}
+
+.text-field {
+    margin: 10px 0 !important;
+}
